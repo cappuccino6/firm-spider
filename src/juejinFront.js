@@ -1,10 +1,10 @@
 const { get } = require('lodash')
 const superAgent = r(APP.L, 'superagent')
 const { targets } = r(APP.C)
-const writeJson = r(APP.L, 'writeJson')
+const writeFile = r(APP.L, 'writeFile')
 const { juejinFront } = targets
 
-let totalPage = 10 // 只抓取十页
+let totalPage = 9 // 只抓取十页
 
 const getPostJson = ({after = ''}) => {
   return {
@@ -31,10 +31,10 @@ const fetchData = async (params = {}) => {
   }
   pageInfo = resItems.pageInfo
   if(resItems.pageInfo.hasNextPage && totalPage > 0) {
-    totalPage--
     fetchData({after: resItems.pageInfo.endCursor})
+    totalPage--
   } else {
-    writeJson('juejinFront.json', {paging, data})
+    writeFile('juejinFront.json', {paging, data})
   }
 }
 

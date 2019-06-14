@@ -8,6 +8,8 @@ global.r = (p = base.get(), m = '') => require(path.join(p, m))
 global.APP = {
   R: base.get(),
   C: path.resolve(base.get(), 'config.js'),
+  P: path.resolve(base.get(), 'package.json'),
+  A: path.resolve(base.get(), 'apis'),
   L: path.resolve(base.get(), 'lib'),
   S: path.resolve(base.get(), 'src'),
   D: path.resolve(base.get(), 'data'),
@@ -31,7 +33,7 @@ const targets = {
 }
 
 module.exports = {
-  port: 7941,
+  port: 8081,
   targets,
   spiderHost: 'https://juejin.im/timeline/frontend',
 }
