@@ -1,0 +1,27 @@
+{
+  "name": "juejin-spider",
+  "version": "1.0.0",
+  "description": "spider for juejin",
+  "main": "index.js",
+  "scripts": {
+    "start": "export DEBUG=* && node app.js"
+  },
+  "keywords": [
+    "juejin",
+    "spider",
+    "nodejs",
+    "koa"
+  ],
+  "author": "zyb",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-dir": "^1.0.2",
+    "cheerio": "^1.0.0-rc.3",
+    "debug": "^4.1.1",
+    "fs": "0.0.1-security",
+    "koa": "^2.7.0",
+    "lodash": "^4.17.11",
+    "path": "^0.12.7",
+    "superagent": "^5.0.7"
+  }
+}
