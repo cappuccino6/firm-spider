@@ -1,6 +1,5 @@
 const router = require('koa-router')()
 const readFile = r(APP.L, 'readFile')
-const { getQuery, addQuery } = r(APP.L, 'url')
 const formatPaging = r(APP.M, 'formatPaging')
 
 // router.prefix('/api');
