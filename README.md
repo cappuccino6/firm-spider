@@ -30,6 +30,9 @@ data 下为抓取的数据，也作为向外开发 api 时读取数据入口
 抓取的所有数据写在本地 data 目录下
 
 掘金文章： npm run start:juejin
+小红书： npm run start:redBook
+电影天堂： npm run start:movie
+
 ```
 
 ## api
