@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "export DEBUG=* && node app.js",
-    "start:juejin": "export APP_NAME=juejin && DEBUG=* node app.js"
+    "start:juejin": "export APP_NAME=juejin && DEBUG=* node app.js",
+    "start:redBook": "export APP_NAME=redBook && DEBUG=* node app.js",
+    "start:movie": "export APP_NAME=movie && DEBUG=* node app.js"
   },
   "keywords": [
     "juejin",
@@ -20,11 +22,13 @@
     "cheerio": "^1.0.0-rc.3",
     "debug": "^4.1.1",
     "fs": "0.0.1-security",
+    "iconv-lite": "^0.4.24",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
     "koa2-cors": "^2.0.6",
     "lodash": "^4.17.11",
     "path": "^0.12.7",
-    "superagent": "^5.0.7"
+    "superagent": "^5.0.7",
+    "superagent-charset": "^1.2.0"
   }
 }

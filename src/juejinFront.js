@@ -4,7 +4,7 @@ const { targets } = r(APP.C)
 const writeFile = r(APP.L, 'writeFile')
 const { juejinFront } = targets
 
-let totalPage = 9 // 只抓取十页
+let totalPage = 10 // 只抓取十页
 
 const getPostJson = ({after = ''}) => {
   return {
@@ -23,14 +23,14 @@ const fetchData = async (params = {}) => {
   const {method, options: {headers}} = juejinFront
   const options = {method, options: {headers, json: getPostJson(params)}}
   const res = await superAgent(juejinFront.url, options)
-  const resItems = get(res, 'body.data.articleFeed.items', {})
+  const resItems = get(res, 'data.articleFeed.items', {})
   data = data.concat(resItems.edges)
   paging = {
     total: data.length,
     ...resItems.pageInfo
   }
   pageInfo = resItems.pageInfo
-  if(resItems.pageInfo.hasNextPage && totalPage > 0) {
+  if(resItems.pageInfo.hasNextPage && totalPage > 1) {
     fetchData({after: resItems.pageInfo.endCursor})
     totalPage--
   } else {

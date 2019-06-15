@@ -3,13 +3,22 @@ const cors = require('koa2-cors');
 const config = require('./config')
 const package = r(APP.P)
 const juejinFront = r(APP.S, 'juejinFront')
+const redBook = r(APP.S, 'redBook')
+const movie = r(APP.S, 'movie')
 const debug = require('debug')(package.name)
 const app = new Koa()
 
 // 针对不同 app 跑不同的爬虫
 const appName = process.env.APP_NAME
-if(appName === 'juejin' ) {
-  juejinFront()
+
+const spiders = {
+  juejin: juejinFront,
+  redBook: redBook,
+  movie: movie
+}
+
+if(spiders[appName]) {
+  spiders[appName]()
 }
 
 // 注入多个 api
