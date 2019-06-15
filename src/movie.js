@@ -8,7 +8,6 @@ const { movie } = targets
 let currentPage = 1
 const totalPage = 10 // 抓取 10 页
 
-
 // 存电影数据，title，磁力链接
 const data = []
 

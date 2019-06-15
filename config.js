@@ -60,6 +60,5 @@ const targets = {
 
 module.exports = {
   port: 8081,
-  targets,
-  spiderHost: 'https://juejin.im/timeline/frontend',
+  targets
 }
