@@ -51,9 +51,9 @@ const targets = {
       }
     }
   },
-  // 电影天堂的科幻电影
+  // 电影天堂的所所有类型的电影
   movie: {
-    host: 'https://www.dy2018.com'
+    url: 'https://www.dy2018.com'
   }
 }
 

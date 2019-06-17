@@ -1,14 +1,14 @@
-# Koa 爬虫
+# 🚀 Koa 爬虫
 
 🚀🕷️👂一只坚强的蜘蛛
 
-## 安装
+## 🚗 安装
 
 ```html
 npm i
 ```
 
-## 目录介绍
+## 📖 目录介绍
 
 ```
 config.js 全局配置
@@ -24,7 +24,7 @@ model 是各种模型和格式化数据处理，为 mongo 预留位置
 data 下为抓取的数据，也作为向外开发 api 时读取数据入口
 ```
 
-## 爬虫
+## 🕷️ 爬虫
 
 ```
 抓取的所有数据写在本地 data 目录下
@@ -35,13 +35,17 @@ data 下为抓取的数据，也作为向外开发 api 时读取数据入口
 
 ```
 
-## api
+## 💻 api
 
 ```
 npm run start
+
+/juejin/front  掘金文章
+/movie/:type  电影（type 在电影爬虫脚本里有配置）
+/redBook/travel 小红书
 ```
 
-## TODO
+## ⌛️ TODO
 
 ```
 接入 mongodb 数据库

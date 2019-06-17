@@ -27,29 +27,27 @@ const fetchMovieList = async (type = 0) => {
   debug(`fetch ${movieTypes[type]} movie`)
   // 存电影数据，title，磁力链接
   let data = []
+  let paging = {}
   let currentPage = 1
-  const totalPage = 20 // 抓取 20 页
+  const totalPage = 30 // 抓取页
   while(currentPage <= totalPage) {
-    const url = movie.host + `/${type}/index${currentPage > 1 ? '_' + currentPage : ''}.html`
+    const url = movie.url + `/${type}/index${currentPage > 1 ? '_' + currentPage : ''}.html`
     const res = await superAgent(url, {}, 'static')
     const $ele = $select(res, '.co_content8 ul table')
     $ele.each((index, ele) => {
       const li = $(ele).html()
       $select(li, 'td b .ulink').last().each(async (idx, e) => {
         // TODO $(e).attr('href') api 无效？
-        const link = movie.host + e.attribs.href
+        const link = movie.url + e.attribs.href
         const { magneto, score } = await fetchMoreInfo(link)
         const info = {title: $(e).text(), link, magneto, score}
         data.push(info)
         // 按评分倒序
         data.sort((a, b) => b.score - a.score)
-
-        writeFile(`${movieTypes[type]}Movie.json`, {
-          paging: { total: data.length },
-          data
-        }, path.join(APP.D, `movie`))
+        paging = { total: data.length }
       })
     })
+    writeFile(`${movieTypes[type]}Movie.json`, { paging, data }, path.join(APP.D, `movie`))
     currentPage++
   }
 }
