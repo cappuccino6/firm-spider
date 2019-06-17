@@ -53,7 +53,6 @@ const targets = {
   },
   // 电影天堂的科幻电影
   movie: {
-    url: 'https://www.dy2018.com/4/',
     host: 'https://www.dy2018.com'
   }
 }
