@@ -401,13 +401,13 @@
 		},
 		{
 			"rate": "9.2",
-			"cover_x": 500,
+			"cover_x": 1092,
 			"title": "天堂电影院",
 			"url": "https://movie.douban.com/subject/1291828/",
 			"playable": false,
-			"cover": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910901025.jpg",
+			"cover": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2559577569.jpg",
 			"id": "1291828",
-			"cover_y": 712,
+			"cover_y": 1556,
 			"is_new": false
 		},
 		{

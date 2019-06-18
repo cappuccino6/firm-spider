@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "export DEBUG=* && node app.js",
+    "start:all": "export APP_NAME=all && DEBUG=* node app.js",
     "start:juejin": "export APP_NAME=juejin && DEBUG=* node app.js",
     "start:redBook": "export APP_NAME=redBook && DEBUG=* node app.js",
     "start:movie": "export APP_NAME=movie && DEBUG=* node app.js",

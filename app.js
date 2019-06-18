@@ -27,6 +27,10 @@ if(spiders[appName]) {
   spiders[appName]()
 }
 
+if(appName === 'all') {
+  Object.values(spiders).map(spider => spider())
+}
+
 // 注入多个 api
 const apis = r(APP.A)
 Object.values(apis).forEach(api => app.use(api))
