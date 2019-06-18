@@ -5,6 +5,8 @@ const package = r(APP.P)
 const juejinFront = r(APP.S, 'juejinFront')
 const redBook = r(APP.S, 'redBook')
 const movie = r(APP.S, 'movie')
+const jianshu = r(APP.S, 'jianshu')
+const pixabay = r(APP.S, 'pixabay')
 const debug = require('debug')(package.name)
 const app = new Koa()
 
@@ -14,7 +16,9 @@ const appName = process.env.APP_NAME
 const spiders = {
   juejin: juejinFront,
   redBook: redBook,
-  movie: movie
+  movie: movie,
+  jianshu: jianshu,
+  pixabay: pixabay
 }
 
 if(spiders[appName]) {

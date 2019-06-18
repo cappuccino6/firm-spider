@@ -7,7 +7,9 @@
     "start": "export DEBUG=* && node app.js",
     "start:juejin": "export APP_NAME=juejin && DEBUG=* node app.js",
     "start:redBook": "export APP_NAME=redBook && DEBUG=* node app.js",
-    "start:movie": "export APP_NAME=movie && DEBUG=* node app.js"
+    "start:movie": "export APP_NAME=movie && DEBUG=* node app.js",
+    "start:jianshu": "export APP_NAME=jianshu && DEBUG=* node app.js",
+    "start:pixabay": "export APP_NAME=pixabay && DEBUG=* node app.js"
   },
   "keywords": [
     "juejin",
