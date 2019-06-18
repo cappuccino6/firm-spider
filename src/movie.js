@@ -34,10 +34,9 @@ const fetchMovieList = async (type = 0) => {
     const url = movie.url + `/${type}/index${currentPage > 1 ? '_' + currentPage : ''}.html`
     const res = await superAgent(url, {}, 'static')
     const $ele = $select(res, '.co_content8 ul table')
-    $ele.each((index, ele) => {
+    $ele.each((_, ele) => {
       const li = $(ele).html()
-      $select(li, 'td b .ulink').last().each(async (idx, e) => {
-        // TODO $(e).attr('href') api 无效？
+      $select(li, 'td b .ulink').last().each(async (_, e) => {
         const link = movie.url + e.attribs.href
         const { magneto, score } = await fetchMoreInfo(link)
         const info = {title: $(e).text(), link, magneto, score}
@@ -58,12 +57,10 @@ const fetchMoreInfo = async link => {
   let magneto = []
   let score = 0
   const res = await superAgent(link, {}, 'static')
-  $select(res, '.bd2 #Zoom table a').each((index, ele) => {
-    // 不做这个限制了，有些电影没有 magnet 链接
-    // if(/^magnet/.test(ele.attribs.href)) {}
+  $select(res, '.bd2 #Zoom table a').each((_, ele) => {
     magneto.push(ele.attribs.href)
   })
-  $select(res, '.position .rank').each((index, ele) => {
+  $select(res, '.position .rank').each((_, ele) => {
     score = Math.min(Number($(ele).text()), 10).toFixed(1)
   })
   return { magneto, score }
