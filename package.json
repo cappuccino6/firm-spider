@@ -9,7 +9,8 @@
     "start:redBook": "export APP_NAME=redBook && DEBUG=* node app.js",
     "start:movie": "export APP_NAME=movie && DEBUG=* node app.js",
     "start:jianshu": "export APP_NAME=jianshu && DEBUG=* node app.js",
-    "start:pixabay": "export APP_NAME=pixabay && DEBUG=* node app.js"
+    "start:pixabay": "export APP_NAME=pixabay && DEBUG=* node app.js",
+    "start:douban": "export APP_NAME=douban && DEBUG=* node app.js"
   },
   "keywords": [
     "juejin",

@@ -86,6 +86,10 @@ const targets = {
   // pixabay 图片网站
   pixabay:  {
     url: 'https://pixabay.com'
+  },
+  // 豆瓣高分电影
+  douban: {
+    url: 'https://movie.douban.com/j/search_subjects?type=movie&tag=%E8%B1%86%E7%93%A3%E9%AB%98%E5%88%86&sort=recommend&page_limit=20&page_start=0'
   }
 }
 

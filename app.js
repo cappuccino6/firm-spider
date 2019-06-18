@@ -7,6 +7,7 @@ const redBook = r(APP.S, 'redBook')
 const movie = r(APP.S, 'movie')
 const jianshu = r(APP.S, 'jianshu')
 const pixabay = r(APP.S, 'pixabay')
+const douban = r(APP.S, 'douban')
 const debug = require('debug')(package.name)
 const app = new Koa()
 
@@ -18,7 +19,8 @@ const spiders = {
   redBook: redBook,
   movie: movie,
   jianshu: jianshu,
-  pixabay: pixabay
+  pixabay: pixabay,
+  douban: douban
 }
 
 if(spiders[appName]) {
