@@ -64,7 +64,7 @@ const fetchMoreInfo = async link => {
     magneto.push(ele.attribs.href)
   })
   $select(res, '.position .rank').each((index, ele) => {
-    score = Number($(ele).text())
+    score = Math.min(Number($(ele).text()), 10).toFixed(1)
   })
   return { magneto, score }
 }
