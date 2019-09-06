@@ -11,7 +11,8 @@
     "start:movie": "export APP_NAME=movie && DEBUG=* node app.js",
     "start:jianshu": "export APP_NAME=jianshu && DEBUG=* node app.js",
     "start:pixabay": "export APP_NAME=pixabay && DEBUG=* node app.js",
-    "start:douban": "export APP_NAME=douban && DEBUG=* node app.js"
+    "start:douban": "export APP_NAME=douban && DEBUG=* node app.js",
+    "start:wenku": "export APP_NAME=wenku && node app.js"
   },
   "keywords": [
     "juejin",
@@ -32,6 +33,7 @@
     "koa2-cors": "^2.0.6",
     "lodash": "^4.17.13",
     "path": "^0.12.7",
+    "puppeteer": "^1.19.0",
     "superagent": "^5.1.0",
     "superagent-charset": "^1.2.0"
   }

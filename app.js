@@ -8,6 +8,7 @@ const movie = r(APP.S, 'movie')
 const jianshu = r(APP.S, 'jianshu')
 const pixabay = r(APP.S, 'pixabay')
 const douban = r(APP.S, 'douban')
+const wenku = r(APP.S, 'wenku')
 const debug = require('debug')(package.name)
 const app = new Koa()
 
@@ -20,7 +21,8 @@ const spiders = {
   movie: movie,
   jianshu: jianshu,
   pixabay: pixabay,
-  douban: douban
+  douban: douban,
+  wenku: wenku
 }
 
 if(spiders[appName]) {
@@ -31,10 +33,11 @@ if(appName === 'all') {
   Object.values(spiders).map(spider => spider())
 }
 
-// 注入多个 api
-const apis = r(APP.A)
-Object.values(apis).forEach(api => app.use(api))
+// 注入多个路由
+const routes = r(APP.A)
+Object.values(routes).forEach(route => app.use(route))
 app.use(cors)
 
 app.listen(config.port)
+console.log(`The project is running at http://localhost:${config.port}`)
 debug('start')

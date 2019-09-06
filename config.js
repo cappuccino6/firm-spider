@@ -9,11 +9,12 @@ global.APP = {
   R: base.get(),
   C: path.resolve(base.get(), 'config.js'),
   P: path.resolve(base.get(), 'package.json'),
-  A: path.resolve(base.get(), 'apis'),
+  A: path.resolve(base.get(), 'routes'),
   L: path.resolve(base.get(), 'lib'),
   S: path.resolve(base.get(), 'src'),
   D: path.resolve(base.get(), 'data'),
-  M: path.resolve(base.get(), 'model')
+  M: path.resolve(base.get(), 'model'),
+  V: path.resolve(base.get(), 'view')
 }
 
 // 所有抓取目标

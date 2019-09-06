@@ -3,6 +3,7 @@ const redBookApi = require('./redBook')
 const movieApi = require('./movie')
 const pixabayApi = require('./pixabay')
 const doubanApi = require('./douban')
+const indexPage = require('./view') // 产出一些页面
 const notFoundApi = require('./404')
 
 module.exports = {
@@ -11,5 +12,6 @@ module.exports = {
   movieApi,
   pixabayApi,
   doubanApi,
+  indexPage,
   notFoundApi
 }

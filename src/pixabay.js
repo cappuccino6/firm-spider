@@ -1,4 +1,3 @@
-const path = require('path')
 const superAgent = r(APP.L, 'superagent')
 const { targets } = r(APP.C)
 const writeFile = r(APP.L, 'writeFile')
