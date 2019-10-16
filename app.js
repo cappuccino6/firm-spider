@@ -33,11 +33,21 @@ if(appName === 'all') {
   Object.values(spiders).map(spider => spider())
 }
 
+process.on('unhandledRejection', err => {
+  console.log(err)
+})
+
+process.on('uncaughtException', err => {
+  console.log(err)
+})
+
 // 注入多个路由
 const routes = r(APP.A)
 Object.values(routes).forEach(route => app.use(route))
 app.use(cors)
 
-app.listen(config.port)
-console.log(`The project is running at http://localhost:${config.port}`)
+app.listen(config.port, () => {
+  console.log(`The project is running at http://localhost:${config.port}`)
+})
+
 debug('start')
